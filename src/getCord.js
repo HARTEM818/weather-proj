@@ -7,6 +7,7 @@ export async function getCord(city) {
     const response = await axios.get(url); 
 
 
+    
     const data = response.data;
 
     if (data.length === 0) {

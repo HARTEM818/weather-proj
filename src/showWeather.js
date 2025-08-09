@@ -11,14 +11,14 @@ export async function showWeather(city) {
   const weatherData = await getWeatherInplace(coords.lat, coords.lon);
   const { temperature, windspeed, winddirection, weathercode, time } =
     weatherData.current_weather;
-
-  refs.weatherInfo.innerHTML = `
-    <p>Температура: <span>${temperature}</span> °C</p>
-    <p>Швидкість вітру: <span>${windspeed}</span> км/год</p>
-    <p>Напрям вітру: <span>${winddirection}</span>°</p>
-    <p>Код погоди: <span>${weathercode}</span></p>
-    <p>Час оновлення: <span>${time}</span></p>
-  `;
+  refs.temperature.innerHTML = `Температура ${temperature} °C`
+  refs.weatherInfo.insertAdjacentHTML("beforeend", `
+    
+    <p>Швидкість вітру: ${windspeed} км/год</p>
+    <p>Напрям вітру: ${winddirection} °</p>
+    <p>Код погоди: ${weathercode} </p>
+    <p>Час оновлення: ${time} </p>
+    `);
 
   refs.weatherInfo.classList.add("visible");
 }

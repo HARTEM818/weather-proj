@@ -42,7 +42,13 @@ body {
   padding-left: 10px;
   margin-top: 15px;
 }
-
+.common-info__wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: 1px solid aquamarine;
+  padding-bottom: 15px;
+}
 .weather__info {
   display: flex;
   flex-direction: column;
