@@ -9,13 +9,16 @@ export async function getWeatherInplace(lat, lon) {
     longitude: lon,
     hourly: 'temperature_2m,relative_humidity_2m',
     current_weather: true,
-    timezone: 'auto'
+    timezone: 'auto',
+    forecast_days: 7,
   };
 
   try {
     const response = await axios.get(url, { params });
 
     const data = response.data;
+    console.log(data);
+    
     return data;
   } catch (error) {
     console.error('Помилка при запиті погоди:', error);
